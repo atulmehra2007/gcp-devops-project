@@ -7,11 +7,11 @@ steps:
 
   args : ['push',"gcr.io/$PROJECT_ID/gcpdevops"]
   
-#-name : "gcr.io/$PROJECT_ID/gke-deploy"
-  #args : 
-  #-run
-  #- --filename=gke.yaml
-  #- --image=gcr.io/$PROJECT_ID/gcpdevops
-  #- --location=us-central1-c
-  #- --cluster=gcp-devops-project
-  #- --namespace=gcp-devops-prod
+-name : "gcr.io/$PROJECT_ID/gke-deploy"
+  args : 
+  -run
+  - --filename=gke.yaml
+  - --image=gcr.io/$PROJECT_ID/gcpdevops
+  - --location=us-central1-c
+  - --cluster=gcp-devops-project
+  - --namespace=gcp-devops-prod
