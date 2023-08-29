@@ -13,3 +13,4 @@ steps:
   - --image=gcr.io/$PROJECT_ID/gcpdevops:latest
   - --location=us-central1-c
   - --cluster=gcp-devops-project
+  - --namespace=gcp-devops-prod
