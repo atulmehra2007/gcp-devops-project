@@ -8,7 +8,7 @@ steps:
     args: ['push', 'gcr.io/$PROJECT_ID/gcpdevops:latest']
 
   # Apply the Kubernetes configuration
-   - name== 'gcr.io/cloud-builders/gke-deploy'
+   - name: 'gcr.io/cloud-builders/gke-deploy'
   
       args: 
         - run 
