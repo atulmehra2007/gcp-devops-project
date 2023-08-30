@@ -14,3 +14,4 @@ steps:
   - --location=us-central1-c
   - --cluster=gcp-devops-project
   - --namespace=gcp-devops-prod
+  timeout: '1600s'
