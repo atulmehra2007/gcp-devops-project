@@ -8,9 +8,11 @@ steps:
     args: ['push', 'gcr.io/$PROJECT_ID/gcpdevops:latest']
 
   # Apply the Kubernetes configuration
-  - name: 'gcr.io/cloud-builders/gke-deploy'
-    args: 
+  
+  - args: 
         - run
+        - --name== 'gcr.io/cloud-builders/gke-deploy'
+        
         - --filename=gke.yaml
         - --image=gcr.io/$PROJECT_ID/gcpdevops
         - --location=us-central1-c
