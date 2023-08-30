@@ -13,10 +13,10 @@ spec:
         app: gcp
     spec:
       containers:
-        - name: gcp-devops-gke
-          image: gcr.io/gke-dev-project/test-gcpdevops:latest
-          ports:
-            - containerPort: 5000
-          env:
-            - name: PORT
-              value: "5000"
+      - name: gcp-devops-gke
+        image: gcr.io/kodekloud-gcp-training/test-gcpdevops:latest
+        ports:
+        - containerPort: 5000
+        env:
+          - name: PORT
+            value: "5000"
