@@ -18,6 +18,8 @@ steps:
       '-f',
       'gke.yaml',  # Replace with the path to your gke.yaml file
       '--namespace=gcp-devops-prod',  # Replace with your desired Kubernetes namespace
+      '--location=us-central1-c',
+      '--clustergcp-devops-project',
     ]
   
   # You can add more steps as needed, such as running tests, etc.
