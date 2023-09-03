@@ -1,16 +1,26 @@
 steps:
-  # build the container image
-- name: "gcr.io/cloud-builders/docker"
-  args: ["build", "-t", "gcr.io/$PROJECT_ID/gcpdevops", "."]
-  # push container image
-- name: "gcr.io/cloud-builders/docker"
-  args: ["push", "gcr.io/$PROJECT_ID/gcpdevops"]
-  # deploy container image to GKE
-- name: "gcr.io/cloud-builders/gke-deploy"
-  args:
-  - run
-  - --filename=gke.yaml
-  - --image=gcr.io/$PROJECT_ID/gcpdevops
-  - --location=us-central1-c
-  - --cluster=gcp-devops-project
-  - --namespace=gcp-devops-prod
+  # Step 1: Authenticate with Google Cloud
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['auth', 'configure-docker']
+  
+  # Step 2: Build the Docker image (if needed)
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/gke-dev-project-397211/gcpdevops:latest', '.'] # Replace with your GCR image details
+  
+  # Step 3: Push the Docker image to Google Container Registry (GCR)
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/gke-dev-project-397211/gcpdevops:latest']
+  
+  # Step 4: Deploy the Kubernetes manifests to GKE
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args: [
+      'apply',
+      '-f',
+      'gke.yaml',  # Replace with the path to your gke.yaml file
+      '--namespace=gcp-devops-prod',  # Replace with your desired Kubernetes namespace
+    ]
+  
+  # You can add more steps as needed, such as running tests, etc.
+
+images:
+  - 'gcr.io/gcr.io/gke-dev-project-397211/gcpdevops:latest'  # Replace with your GCR image details
