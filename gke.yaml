@@ -13,10 +13,10 @@ spec:
         app: gcp
     spec:
       containers:
-      - name:gcp-devops-gke
-        image:nginx:latest
+      - name: gcp-devops-gke  # Corrected indentation here
+        image: gcr.io/$PROJECT_ID/gcpdevops:latest
         ports:
         - containerPort: 5000
         env:
-          - name: PORT
-            value: "5000"
+        - name: PORT
+          value: "5000"
