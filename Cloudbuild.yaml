@@ -13,13 +13,8 @@ steps:
   
   # Step 4: Deploy the Kubernetes manifests to GKE
   - name: 'gcr.io/cloud-builders/gke-deploy'
-    args: 
-        - run
-        - --location=us-central1-c
-        - --cluster=gcp-devops-project 
-        - --namespace=gcp-devops-prod
-        - --filename=gke.yaml
-        - --image=gcr.io/$PROJECT_ID/gcpdevops:latest
+    args: ['run', '--filename=gke.yaml','--image=gcr.io/$PROJECT_ID/gcpdevops:latest', '--location=us-central1-c', '--cluster=gcp-devops-project','--namespace=gcp-devops-prod']
+       
   
   # You can add more steps as needed, such as running tests, etc.
 
