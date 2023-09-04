@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gcp
+      app: mygcp
   template:
     metadata:
       labels:
-        app: gcp
+        app: mygcp
     spec:
       containers:
       - name: gcp-devops-gke  # Corrected indentation here
