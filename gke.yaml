@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: my-app
-          image: gcr.io/gke-dev-project-397211/gcpdevops
+          image: gcr.io/gke-dev-project-397211/gcpdevops:latest
           #ports:
            # - containerPort: 8080 # Replace with the port your application listens on
           #env:
