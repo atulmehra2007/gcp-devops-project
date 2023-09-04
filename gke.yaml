@@ -15,8 +15,8 @@ spec:
       containers:
       - name: gcp-devops-gke  # Corrected indentation here
         image: gcr.io/gke-dev-project-397211/gcpdevops
-        ports:
-        - containerPort: 5000
-        env:
-        - name: PORT
-          value: "5000"
+        #ports:
+        #- containerPort: 5000
+       # env:
+        #- name: PORT
+         # value: "5000"
