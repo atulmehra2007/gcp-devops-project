@@ -6,17 +6,17 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mygcp
+      app: my-app
   template:
     metadata:
       labels:
-        app: mygcp
+        app: my-app
     spec:
       containers:
-      - name: gcp-devops-gke  # Corrected indentation here
-        image: gcr.io/gke-dev-project-397211/gcpdevops
-        ports:
-        - containerPort: 5000
-       # env:
-        #- name: PORT
-         # value: "5000"
+        - name: gcp-devops-gke
+          image: gcr.io/gke-dev-project-397211/gcpdevops
+          ports:
+            - containerPort: 5000 # Replace with the port your application listens on
+          env:
+            - name: PORT
+              value: "5000"
