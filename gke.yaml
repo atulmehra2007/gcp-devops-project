@@ -15,8 +15,8 @@ spec:
       containers:
         - name: gcp-devops-gke
           image: gcr.io/gke-dev-project-397211/gcpdevops
-          ports:
-            - containerPort: 8080 # Replace with the port your application listens on
+          #ports:
+           # - containerPort: 8080 # Replace with the port your application listens on
           #env:
            # - name: PORT
             #  value: "5000"
