@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gcp-devops-gke2
+  name: gcp-devops-gke
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-app2
+      app: my-app
   template:
     metadata:
       labels:
-        app: my-app2
+        app: my-app
     spec:
       containers:
-        - name: gcp-devops-gke
+        - name: my-app
           image: gcr.io/gke-dev-project-397211/gcpdevops:latest
           #ports:
             #- containerPort: 5000 # Replace with the port your application listens on
